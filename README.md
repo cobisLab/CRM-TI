@@ -30,7 +30,7 @@ conda create -n "CRM-TI" python=3.8.13
 conda activate CRM-TI
 ```
 
-## Steps to Use ACIP
+## Steps to Use CRM-TI
 
 1. Download the codes from the following link and unzip the file. Please skip it if you have done this step.
 
@@ -53,13 +53,13 @@ cd CRM-TI
 4. Download the processed epigenetic datasets from the following link.
 
 ```
-wget https://cobis-fs.bme.ncku.edu.tw/CRM-TI/CRM-TI_Dataset.tar.gz
+wget https://cobis-fs.bme.ncku.edu.tw/CRM-TI/Data_dir.tar.gz
 ```
 
 5. Unzip the file.
 
 ```
-tar -zxvf CRM-TI_Dataset.tar.gz
+tar -zxvf Data_dir.tar.gz
 ```
 
 6. If this is the first time you use CRM-TI, run the following command to install necessary packages. 
