@@ -77,9 +77,17 @@ pip install -r requirements_gpu.txt
 
 7. Prepare the input Drosophila CRM regions (ver. dm6) and the genes of interest.
      
-   The input CRM pair format **SHOULD** followed the following formats:
+   (1) The input CRM format **SHOULD** followed the following formats:
    
-   CRM\_[chromosome]\_[start]\_[end]@[Gene Name]
+   CRM\_[chromosome]\_[start]\_[end]
+   
+   (2) The input gene format **SHOULD** followed the following formats:
+   
+   [Gene name]\_[chromosome]\_[start]\_[end]@[Strand]
+   
+   (3) The pair should be in the format:
+   
+   CRM@Gene
    
    For example: (as the input file named input_Test.csv) 
    
@@ -113,5 +121,5 @@ python main.py -i input_test.txt -o output_test
 ![](images/output.png)
 
 Output format explanation:
->* CRM gene [targeting probability].
+>* CRM@gene [targeting probability]
 
