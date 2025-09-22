@@ -121,5 +121,8 @@ python main.py -i input_test.txt -o output_test
 ![](images/output.png)
 
 Output format explanation:
->* CRM@gene [targeting probability]
+>* CRM@gene [CRM-gene interaction probability] [CRM ncRNA association probability] [targeting probability]
+
+
+
 
