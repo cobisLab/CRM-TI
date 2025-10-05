@@ -83,7 +83,7 @@ pip install -r requirements_gpu.txt
    
    (2) The input gene format **SHOULD** followed the following formats:
    
-   [Gene name]\_[chromosome]\_[start]\_[end]@[Strand]
+   [Gene name]\_[chromosome]\_[start]\_[end]\_[Strand]
    
    (3) The pair should be in the format:
    
@@ -91,7 +91,7 @@ pip install -r requirements_gpu.txt
    
    For example: (as the input file named input_Test.csv) 
    
-   ![](input.jpg)
+   ![](img/input.png)
    
    Note: The input chromosomal regions start from the 5' end.
 
@@ -110,19 +110,17 @@ python main.py -i <input_txt_file> -o <output_file_name>
 ## Output Results
 If we use the following as our inputs with the example command:
 
-![](images/input.png)
-
 ```
 python main.py -i input_test.txt -o output_test
 ```
 
->** output_test:**
+![](img/input.png)
 
-![](images/output.png)
+>** output_test:**
 
 Output format explanation:
 >* CRM@gene [CRM-gene interaction probability] [CRM ncRNA association probability] [targeting probability]
 
-
+![](img/output.png)
 
 
