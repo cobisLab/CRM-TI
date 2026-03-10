@@ -1,10 +1,8 @@
 # CRM-TI (CRM Target Identifier)
-CRM-TI: an enhanced pipeline for computationally assigning the target genes of
-cis-regulatory modules by considering comprehensive long-range regulation mechanisms
-Yu-Huai Yua, Guan-Liang Heb, Xing-Yo Wanga, Tzu-Hsien Yanga,c,∗
+CRM-TI: an enhanced pipeline for computationally assigning the target genes of cis-regulatory modules by considering comprehensive long-range regulation mechanisms
 
 ## Related paper:
-Yu-Huai Yu+, Guan-Liang He+, Xing-Yo Wang, Tzu-Hsien Yang*, "CRM-TI: an enhanced pipeline for computationally assigning the target genes of cis-regulatory modules by considering comprehensive long-range regulation mechanisms", (submitting).
+Yu-Huai Yu, Guan-Liang He, Tzu-Hsien Yang∗, "CRM-TI: an enhanced pipeline for computationally assigning the target genes of cis-regulatory modules by considering comprehensive long-range regulation mechanisms", (submitting).
 
 +: These authors contributed equally.
 
@@ -98,20 +96,39 @@ pip install -r requirements_gpu.txt
 8. Predict the probability if the given CRM targets the gene.
 
 ```
-python main.py -i <input_txt_file> -o <output_file_name>
+python main.py -mode 1 -i <input_txt_file> -o <output_file_name>
 ```
 >**Required arguments:**
 >
 >* -i: The input file for CRM-TI.
 >
 >* -o: The output prediction results.
+>
+>* -mode: the processing mode of CRM-TI. '1' means the input file is in the form of CRM-gene pairs.
+>
 
+9. CRM-TI also allows users to provide a list of CRMs together with a list of genes to obtain predictions for all possible CRM-gene pairs between the two lists
 
-## Output Results
+```
+python main.py -mode 1 -crm <CRM_list file> -gene <gene_list_file> -o <output_file_name>
+
+```
+>**Required arguments:**
+>
+>* -crm: The input file for CRM list.
+>
+>* -gene: The input file for the gene list.
+>
+>* -o: The output prediction results.
+>
+>* -mode: the processing mode of CRM-TI. '2' means that CRM-TI will consider all pairings obtained from the CRM list and gene list.
+>
+
+## Mode 1 Output Results
 If we use the following as our inputs with the example command:
 
 ```
-python main.py -i input_test.txt -o output_test
+python main.py -mode 1 -i input_test.txt -o output_test
 ```
 
 ![](img/input.png)
@@ -122,5 +139,28 @@ Output format explanation:
 >* CRM@gene [CRM-gene interaction probability] [CRM ncRNA association probability] [targeting probability]
 
 ![](img/output.png)
+
+## Mode 2 Output Results
+
+If we use the following as our inputs with the example command:
+
+```
+python main.py -mode 2 -crm example_CRM_input.txt -gene example_gene_input.txt -o mode2_output
+```
+
+CRM list:
+
+![](img/input_crm.png)
+
+gene list:
+![](img/input_gene.png)
+
+>** output_test:**
+
+
+Output format explanation:
+>* CRM@gene [CRM-gene interaction probability] [CRM ncRNA association probability] [targeting probability]
+
+![](img/output2.png)
 
 
